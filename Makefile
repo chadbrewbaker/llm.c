@@ -33,6 +33,13 @@ else
   endif
 endif
 
+ifdef LLM_MOJO
+$(info !!!!)
+$(info STUB FOR COMPILING MOJO.)
+$(info !!!!)
+$(info )
+endif
+
 # PHONY means these targets will always be executed
 .PHONY: all train_gpt2 test_gpt2
 
