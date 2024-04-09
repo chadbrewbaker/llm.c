@@ -1029,7 +1029,7 @@ int sample_mult(float* probabilities, int n, float coin) {
 
 // ----------------------------------------------------------------------------
 // main training loop
-int main() {
+int entry_point(int argc, char *argv[]){ 
 
     // build the GPT-2 model from a checkpoint
     GPT2 model;
@@ -1113,4 +1113,13 @@ int main() {
     gpt2_free(&model);
     return 0;
 }
+
+// Remove main if we are driving this code from another file.
+#ifndef LLM_NO_MAIN
+int main(int argc, char *argv[]){
+    return entry_point(argc, argv);
+}
+#endif // LLM_NO_MAIN
+
+
 #endif
